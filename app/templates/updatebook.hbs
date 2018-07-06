@@ -1,0 +1,45 @@
+
+  {{nav-bar}}
+<div class=" login13 row">
+    <form class="col s12">
+
+      <fieldset>
+        <legend><h3 class="f5 washed-yellow" >Update Bookstore</h3></legend>
+        <br><br>
+      <div class="row">
+        <div class="input-field col s6 white-text">
+
+          <!-- {{input value=model.title name="book" type="text" class="validate"}} -->
+
+					{{#power-select
+             options=names
+             selected=selectedPerson
+             onchange=(action "foo")
+             as |person|
+           }}
+           {{person.title}}---{{person.quantity}}
+           {{/power-select}}
+					 {{input value=booktitle name="title" type="text" class="validate"}}
+          <label class="active" for="first_name"><h5 class=" f6 washed-yellow">Book</h5></label>
+        </div>
+      </div>
+			<br><br>
+        <div class="row">
+        <div class="input-field col s6 white-text">
+          {{input value=quantity name="quantity" type="text" class="validate"}}
+          <label class="active" for="last_name"><h5 class=" f6 washed-yellow">Quantity</h5></label>
+        </div>
+
+     </div>
+
+      <div class="row">
+
+          <button {{action "update"}}class="waves-effect waves-light btn">Update</button>
+       </div>
+         </fieldset>
+    </form>
+</div>
+
+
+
+{{outlet}}

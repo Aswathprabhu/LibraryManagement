@@ -1,0 +1,13 @@
+
+<div class="login5">
+	<h2>Login</h2>
+    <form method="post">
+    	{{input type="text" value=model.email name="u" placeholder="Email-ID" required="required" }}
+        {{input type="password" value=model.password name="p" placeholder="Password" required="required" }}
+        <button {{action "login"}} type="submit" class="btn btn-primary btn-block btn-large">Visit Bookstore</button><br>
+        <p><h4>Not a user?</h4></p><br>
+          <button {{action "studentsign"}}type="submit" class="btn btn-primary btn-block btn-small">Student-SignUp</button><br>
+            <button {{action "staffsign"}} type="submit" class="btn btn-primary btn-block btn-small">Staff-SignUp</button>
+    </form>
+</div>
+{{outlet}}

@@ -1,0 +1,39 @@
+
+{{nav-bar}}
+<div class="row login2">
+   <div class="col s12 m6">
+     <div class="card pink lighten-4">
+       <div class="card-content black-text">
+         <span class="card-title">Book Detail</span>
+
+        <br>
+        <br>
+        <table>
+        <tr>
+        <td class="f5">Title:</td><td>{{model.title}}</td>
+      </tr>
+       <tr>
+        <td class="f5">Author:</td><td><a href=""{{action "authordetail" model.author}}>{{model.author}}</a></td>
+      </tr>
+      <tr>
+      <td class="f5">Edition:</td><td>{{model.edition}}</td>
+      </tr>
+      <tr>
+      <td class="f5">Publisher:</td><td>{{model.publisher}}</td>
+      </tr>
+    </table>
+     </div>
+       <div class="card-action">
+				 {{#if role}}
+         <a href="" {{action "pick" model.id}}><span class="black-text">PICK</span></a>
+         <a href="" {{action "submit" model.id}}><span class="black-text">SUBMIT</span></a>
+				 {{/if}}
+				 {{#unless role}}
+				 <span class="black-text"{{action "edit" model.id}}>{{inline-svg 'edit' class="svg"}}</span>
+				 <span class="black-text"{{action "delete" model.id}}>{{inline-svg 'delete' class="svg"}}</span>
+				 {{/unless}}
+       </div>
+     </div>
+   </div>
+ </div>
+{{outlet}}

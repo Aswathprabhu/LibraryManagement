@@ -1,0 +1,40 @@
+{{nav-bar}}
+<div class="row login">
+   <div class="col s12 m6">
+     <div class="card pink lighten-4">
+       <div class="card-content black-text">
+         <span class="card-title">Author Detail</span>
+        <br>
+        <br>
+        <table>
+        <tr>
+        <td class="f5">Name:</td><td>{{model.name}}</td>
+        </tr>
+        <tr>
+        <td class="f5">Books:</td>
+				<td>
+					{{#each model.books as |book|}}
+         <p>
+         <a href="" {{action "displaydetail" book.id}}>{{book._data.title}}</a>
+         </p><br>
+         {{else}}
+         <p>No Books available!</p>
+				 <button {{action "addbook"}}class="waves-effect waves-light btn-small">Add Books</button>
+         {{/each}}
+
+
+				</td>
+        </tr>
+        <tr>
+        <td class="f5">Country:</td><td>{{model.country}}</td>
+        </tr>
+        </table>
+				<br><br>
+				{{#unless role}}
+				<span class="black-text"{{action "edit" model.id}}>{{inline-svg "edit" class="svg"}}</span>
+				{{/unless}}
+        </div>
+       </div>
+    </div>
+ </div>
+{{outlet}}

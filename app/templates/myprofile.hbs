@@ -1,0 +1,17 @@
+
+{{nav-bar}}
+<div class="login7 white-text">
+	<h3 class="white-text">Profile</h3><br>
+    <form method="post">
+      {{#if role}}
+    Register No:	<input class="white-text" type="text" value={{model.userid}} name="userid" placeholder="Register No:" required="required" disabled>
+      {{else}}
+      Staff ID:	<input class="white-text" type="text" value={{model.userid}} name="userid" placeholder="Staff ID:" required="required" disabled>
+        {{/if}}
+    Name:  {{input type="text" value=model.name name="name" required="required" }}
+
+   Email-ID: {{input type="email" value=model.email name="email" required="required" }}
+
+           <button {{action "save"}}type="submit" class="btn btn-primary btn-block btn-large">Update Changes</button>
+    </form>
+</div>

@@ -1,0 +1,57 @@
+
+  {{nav-bar}}
+<div class=" login9 row ">
+
+    <form>
+
+      <fieldset>
+        <legend><h3 class="f5 washed-yellow" >Add Book</h3></legend>
+
+        <div class="input-field col s6 white-text">
+
+          {{input value=model.title name="title" type="text" class="validate"}}
+          <label class="active" for="first_name"><h5 class=" f6 washed-yellow">Title</h5></label>
+
+      </div>
+        <div class="row">
+        <div class="input-field col s6 white-text">
+          {{input value=model.author name="author" type="text" class="validate"}}
+          <label class="active" for="last_name"><h5 class=" f6 washed-yellow">Author</h5></label>
+        </div>
+     </div>
+
+        <div class="input-field col s6 white-text">
+          {{input value=model.edition name="edition" type="text" class="validate"}}
+          <label class="active" for="last_name"><h5 class=" f6 washed-yellow">Edition</h5></label>
+        </div>
+
+
+      <div class="row">
+        <div class="input-field col s6 white-text">
+          {{input value=model.publisher name="publisher" type="text" class="validate"}}
+          <label class="active" for="email"><h5 class=" f6 washed-yellow">Publisher</h5></label>
+        </div>
+       </div>
+
+
+        <div class="row">
+        <div class="input-field col s6 white-text">
+          {{input value=model.quantity name="quanity" type="text" class="validate"}}
+          <label class="active" for="email"><h5 class=" f6 washed-yellow">Quantity</h5></label>
+        </div>
+      </div>
+      <div class="but">
+				{{#if model.id}}
+	       <button {{action "save" model.id}}class="waves-effect waves-light btn">Save</button>
+	       {{else}}
+	       <button {{action "save"}}class="waves-effect waves-light btn">Save</button>
+	       {{/if}}
+
+		</div>
+    </fieldset>
+    </form>
+  </div>
+
+
+
+{{outlet}}

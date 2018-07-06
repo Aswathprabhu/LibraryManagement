@@ -1,0 +1,14 @@
+
+<div class="login12">
+	  <form method="post">
+    	{{input type="text" value=model.userid name="userid" placeholder="Register No:" required="required" }}
+      {{input type="text" value=model.name name="name" placeholder="Name" required="required" }}
+
+          {{input type="email" value=model.email name="email" placeholder="Email-id" required="required" }}
+            {{input type="password" value=model.password name="password" placeholder="Password" required="required" }}
+           <button {{action "adduser" "1"}}type="submit" class="btn btn-primary btn-block btn-large">Sign-up</button>
+    </form>
+</div>
+
+
+{{outlet}}

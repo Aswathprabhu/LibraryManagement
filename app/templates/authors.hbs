@@ -1,0 +1,24 @@
+
+
+  {{nav-bar}}
+<div class="login1 row brown lighten-4">
+
+  <div class="collection">
+    {{#each paginatedContent as |author|}}
+    <ul class="collection">
+         <li class="collection-item"><a href=""{{action "fetch" author.id}}>{{author.name}}</a></li>
+    </ul>
+    {{/each}}
+    <ul class="pagination">
+   <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    {{#each pages as |page ind|}}
+
+     <li class=" brown active">  {{#link-to "authors" (query-params pageNumber=ind) }}{{ind}}{{/link-to}}</li>
+
+    {{/each}}
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
+ </div>
+
+</div>
+{{outlet}}

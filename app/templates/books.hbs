@@ -1,0 +1,28 @@
+
+{{nav-bar}}
+<div style="overflow:auto;display:grid;" class="login3 row brown lighten-4 ">
+
+  {{input class="brown white-text" type="text" value=title placeholder="Enter to search.."}}
+  <span style="justify-self:center;"{{action "search" }} name="search">{{inline-svg "loupe" class="svg"}}</span>
+  {{#if search}}
+  You Searched For '{{search}}'
+  {{/if}}
+  <div class="collection ">
+    {{#each paginatedContent as |book|}}
+    <ul class="collection">
+         {{#link-to "bookdetail" book.id}}<li class="collection-item">{{book.title}}</li>{{/link-to}}
+    </ul>
+    {{/each}}
+    <ul class="pagination">
+   <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    {{#each pages as |page ind|}}
+
+     <li class=" brown active">  {{#link-to "books" (query-params pageNumber=ind) }}{{ind}}{{/link-to}}</li>
+
+    {{/each}}
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
+    </div>
+
+</div>
+{{outlet}}

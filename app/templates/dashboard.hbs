@@ -1,0 +1,15 @@
+
+<div class="login4"><br><br><br><br>
+<h2 class="f1 lightest-blue">Welcome to Library</h2>
+<h4 class="f4">You are onboard, {{name}} </h4><br>
+{{#link-to "books"}}<h4 class="f3 lightest-blue grow">View Books</h4>{{/link-to}}<br>
+{{#link-to "authors"}}<h4 class="f3 lightest-blue grow">View Authors</h4>{{/link-to}}<br>
+{{#unless role}}
+{{#link-to "newbook"}}<h4 class="f3 lightest-blue grow">Add Book</h4>{{/link-to}}<br>
+{{#link-to "newauthor"}}<h4 class="f3 lightest-blue grow">Add Author</h4>{{/link-to}}<br>
+{{#link-to "updatebook"}}<h4 class="f3 lightest-blue grow">Update Bookstore</h4>{{/link-to}}
+{{/unless}}
+
+</div>
+
+{{outlet}}
